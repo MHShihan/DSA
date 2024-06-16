@@ -3,28 +3,34 @@ using namespace std;
 
 int main()
 {
-    int n;
     cout << "Enter a value: ";
+    int n;
     cin >> n;
 
     int row = 1;
-    int count = 1;
-
     while (row <= n)
     {
-        // int col = 1, space = 1;
         int col = 1, space = n - row;
-        while (space > 0)
+        // Printing space
+        while (space)
         {
             cout << " ";
             space--;
         }
 
+        // printing first (col <= row) triangle
         while (col <= row)
         {
-            cout << count++;
-            col++;
+            cout << col++;
         }
+
+        // printing second triangle
+        col = row - 1;
+        while (col)
+        {
+            cout << col--;
+        }
+
         cout << endl;
         row++;
     }
