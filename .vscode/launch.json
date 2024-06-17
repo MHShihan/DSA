@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/DSA/switchCase",
-      "program": "c:/DSA/switchCase/build/Debug/outDebug",
+      "cwd": "c:/DSA/LeetCode",
+      "program": "c:/DSA/LeetCode/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
