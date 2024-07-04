@@ -9,14 +9,37 @@ void sort01(int arr[], int size)
     {
         if (arr[left] == 0)
             left++;
-        else if (arr[left] == 1 && arr[right] == 0)
+        // else if (arr[left] == 1 && arr[right] == 0)
+        // {
+        //     swap(arr[left], arr[right]);
+        //     left++;
+        //     right--;
+        // }
+        else if (arr[right] == 1)
+            right--;
+        else
         {
             swap(arr[left], arr[right]);
             left++;
             right--;
         }
+    }
+}
+
+void sort01Method2(int arr[], int n)
+{
+    int left = 0, right = n - 1;
+    while (left <= right)
+    {
+        if (arr[left] == 0)
+        {
+            left++;
+        }
         else
+        {
+            swap(arr[left], arr[right]);
             right--;
+        }
     }
 }
 
@@ -34,8 +57,8 @@ int main()
     int arr[14] = {1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1};
     int arr2[8] = {1, 1, 0, 0, 0, 0, 1, 0};
 
-    sort01(arr2, 8);
-    printingArray(arr2, 8);
+    sort01Method2(arr, 14);
+    printingArray(arr, 14);
 
     return 0;
 }
