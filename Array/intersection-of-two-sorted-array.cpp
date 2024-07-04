@@ -1,5 +1,8 @@
+#include <iostream>
 #include <bits/stdc++.h>
 #include <vector>
+using namespace std;
+
 vector<int> findArrayIntersection(vector<int> &arr1, int n, vector<int> &arr2, int m)
 {
     vector<int> ans;
