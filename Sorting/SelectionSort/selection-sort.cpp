@@ -3,20 +3,6 @@ using namespace std;
 
 void selectionSort(int arr[], int n)
 {
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = i + 1; j < n; j++)
-        {
-            if (arr[i] > arr[j])
-            {
-                swap(arr[i], arr[j]);
-            }
-        }
-    }
-}
-
-void selectionSort2(int arr[], int n)
-{
     for (int i = 0; i < n - 1; i++)
     {
         int minIndex = i;
@@ -44,7 +30,7 @@ void printingArray(int arr[], int n)
 int main()
 {
     int arr[5] = {64, 25, 12, 22, 11};
-    selectionSort2(arr, 5);
+    selectionSort(arr, 5);
     printingArray(arr, 5);
 
     return 0;
