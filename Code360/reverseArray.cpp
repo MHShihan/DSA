@@ -17,7 +17,7 @@ void reverseArray(vector<int> &arr, int m)
     }
 }
 
-void printingArray(vector<int> &arr, int n)
+void printingArray(vector<int> &arr)
 {
     for (int i : arr)
     {
@@ -32,7 +32,7 @@ int main()
     int n = arr.size();
 
     reverseArray(arr, 1);
-    printingArray(arr, n);
+    printingArray(arr);
 
     return 0;
 }

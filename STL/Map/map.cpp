@@ -24,5 +24,7 @@ int main()
         cout << i.first << " " << i.second << endl;
     }
 
+    // ther is another method which is "find()". If needed I have to learn this method
+
     return 0;
 }
