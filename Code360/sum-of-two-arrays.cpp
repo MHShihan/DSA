@@ -4,9 +4,8 @@
 
 using namespace std;
 
-int getSumOfArray(vector<int> &nums)
+int getSum(vector<int> &nums, int n)
 {
-    int n = nums.size();
     int sum = 0;
     for (int i = 0; i < n; i++)
     {
@@ -36,10 +35,10 @@ vector<int> getArraySum(int sum)
     return arraySum;
 }
 
-vector<int> findArraySum(vector<int> &a, vector<int> &b)
+vector<int> findArraySum(vector<int> &a, int n, vector<int> &b, int m)
 {
-    int sum1 = getSumOfArray(a);
-    int sum2 = getSumOfArray(b);
+    int sum1 = getSum(a, n);
+    int sum2 = getSum(b, m);
     int sumOfTwoArray = sum1 + sum2;
 
     return getArraySum(sumOfTwoArray);
@@ -59,8 +58,10 @@ int main()
 {
     vector<int> a = {4, 5, 1};
     vector<int> b = {3, 4, 5};
+    int n = a.size();
+    int m = b.size();
 
-    vector<int> v = findArraySum(a, b);
+    vector<int> v = findArraySum(a, n, b, m);
 
     printArray(v);
 
