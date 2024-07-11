@@ -47,7 +47,7 @@ bool isPalindrome(string s)
 
 int main()
 {
-    string s = "";
+    string s = "A man, a plan, a canal: Panama";
 
     cout << isPalindrome(s) << endl;
 

@@ -8,13 +8,9 @@ string toLowerCase(string s)
     string temp;
 
     for (int i = 0; i < n; i++)
-    {
-        if (s[i] >= '0' && s[i] <= '9')
-        {
-            temp.push_back(s[i]);
-        }
 
-        if (s[i] >= 'a' && s[i] <= 'z')
+    {
+        if (s[i] >= '0' && s[i] <= '9' || s[i] >= 'a' && s[i] <= 'z')
         {
             temp.push_back(s[i]);
         }
@@ -55,11 +51,11 @@ int main()
 
     if (checkPalindrome(newString) == 1)
     {
-        cout << s << " --> Palindrome" << endl;
+        cout << s2 << " --> Palindrome" << endl;
     }
     else
     {
-        cout << s << " --> NOT Palindrome" << endl;
+        cout << s2 << " --> NOT Palindrome" << endl;
     }
 
     return 0;
