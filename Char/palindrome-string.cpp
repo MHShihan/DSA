@@ -1,9 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-char toUpperCase(char ch)
+char toLowerCase(char ch)
 {
-    if (ch >= 'A' && ch <= 'Z')
+    if (ch >= 'a' && ch <= 'z')
     {
         return ch;
     }
@@ -11,7 +11,7 @@ char toUpperCase(char ch)
     {
         // or ch - 32;
         // 'A' = 65  and 'a' = 97
-        return ch - 'a' + 'A';
+        return ch - 'A' + 'a';
     }
 }
 
@@ -35,10 +35,12 @@ bool checkPalindrome2(string s)
 
     while (st <= e)
     {
-        if (toUpperCase(s[st]) != toUpperCase(s[e]))
+
+        if (toLowerCase(s[st]) != toLowerCase(s[e]))
         {
             return 0;
         }
+
         st++;
         e--;
     }
@@ -48,10 +50,10 @@ bool checkPalindrome2(string s)
 
 int main()
 {
-    string s = "DAd";
+    string s = "c1 O$d@eeD o1c";
     cout << checkPalindrome2(s) << endl;
 
-    cout << "UpperCase : " << toUpperCase('d') << endl;
+    cout << "Lower case : " << toLowerCase('H') << endl;
 
     return 0;
 }
