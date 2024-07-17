@@ -31,7 +31,10 @@ vector<int> wavePrint(vector<vector<int>> arr, int nRows, int mCols)
 
 int main()
 {
-    vector<vector<int>> arr = {{1, 11, 111, 1111}, {2, 22, 222, 2222}, {3, 33, 333, 3333}, {4, 44, 444, 4444}};
+    vector<vector<int>> arr = {{1, 11, 111, 1111},
+                               {2, 22, 222, 2222},
+                               {3, 33, 333, 3333},
+                               {4, 44, 444, 4444}};
 
     vector<int> ans = wavePrint(arr, 4, 4);
 
