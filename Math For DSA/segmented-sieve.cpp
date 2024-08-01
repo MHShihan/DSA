@@ -45,18 +45,14 @@ void segmentedSieve(long long l, long long r)
     for (int pr : prime)
     {
 
-        long long firstMultiple = (l / pr) * pr;
+        int firstMultiple = (l / pr) * pr;
 
         if (firstMultiple < l)
         {
             firstMultiple += pr;
         }
 
-        long long start;
-
-        (firstMultiple < pr * pr) ? start = pr *pr : start = firstMultiple;
-
-        for (long long j = start; j <= r; j += pr)
+        for (int j = max(firstMultiple, pr * pr); j <= r; j += pr)
         {
             isPrime[j - l] = false;
         }
