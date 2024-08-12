@@ -1,6 +1,12 @@
 #include <math.h>
 class Solution
 {
+private:
+    bool isPowerOfTwo2(int n)
+    {
+        return n > 0 && (n & (n - 1)) == 0;
+    }
+
 public:
     bool isPowerOfTwo(int n)
     {
