@@ -37,5 +37,12 @@ int main()
         cout << endl;
     }
 
+    // release array
+    for (int i = 0; i < row; i++)
+    {
+        delete[] arr[i];
+    }
+    delete[] arr;
+
     return 0;
 }
