@@ -1,17 +1,29 @@
 #include <iostream>
 using namespace std;
 
-int main()
+void fibonacci(int n)
 {
-
-    cout << "Enter a value: ";
-    int n;
-    cin >> n;
 
     int a = 0;
     int b = 1;
 
-    for (int i = 1; i <= n; i++)
+    if (n == 1)
+    {
+        cout << a << endl;
+        return;
+    }
+
+    if (n == 2)
+    {
+        cout << a << " " << b << " " << endl;
+    }
+
+    if (n > 2)
+    {
+        cout << a << " " << b << " ";
+    }
+
+    for (int i = 3; i <= n; i++)
     {
         int nextNumber = a + b;
         cout << nextNumber << " ";
@@ -19,6 +31,16 @@ int main()
         a = b;
         b = nextNumber;
     }
+}
+
+int main()
+{
+
+    cout << "Enter a value: ";
+    int n;
+    cin >> n;
+
+    fibonacci(n);
 
     return 0;
 }
