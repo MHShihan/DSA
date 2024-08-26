@@ -20,7 +20,7 @@ void sayDigits(int n, string numbers[])
 int main()
 {
     int n;
-    cout << "Enter a number: ";
+    cout << "Enter a number: "; 
     cin >> n;
 
     string numbers[10] = {"Zero", "One", "Two", "Three", "Four",
