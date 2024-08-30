@@ -3,23 +3,34 @@
 
 using namespace std;
 
-void bubbleSort(vector<int> &arr, int n)
+void merge(vector<int> &arr1, int m, vector<int> &arr2, int n, vector<int> &arr3)
 {
-    for (int i = 1; i < n; i++)
+    int i = 0;
+    int j = 0;
+    int k = 0;
+
+    while (i < m && j < n)
     {
-        bool swapped = false;
-
-        for (int j = 0; j < n - i; j++)
+        if (arr1[i] < arr2[j])
         {
-            if (arr[j] > arr[j + 1])
-            {
-                swap(arr[j], arr[j + 1]);
-                swapped = true;
-            }
+            arr3[k++] = arr1[i++];
         }
+        else
+        {
+            arr3[k++] = arr2[j++];
+        }
+    }
 
-        if (swapped == false)
-            break;
+    // copy the remaining element of first array
+    while (i < m)
+    {
+        arr3[k++] = arr1[i++];
+    }
+
+    // copy the remaining element of second array
+    while (j < n)
+    {
+        arr3[k++] = arr1[j++];
     }
 }
 
@@ -43,7 +54,7 @@ double findMedianSortedArraysApproach1(vector<int> &num1, vector<int> &num2)
 
     int s = temp.size();
 
-    bubbleSort(temp, s);
+    merge(num1, s1, num2, s2, temp);
 
     if (s & 1)
     {
