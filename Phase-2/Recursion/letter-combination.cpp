@@ -26,9 +26,9 @@ void letterCombinations(string digits, int index, string output, string mapping[
 
 int main()
 {
-    string digit;
+    string digits;
     cout << "Enter a integer value from 2 to upto 4 digit: ";
-    cin >> digit;
+    cin >> digits;
 
     int index = 0;
     string output;
@@ -36,7 +36,7 @@ int main()
 
     string mapping[10] = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
 
-    letterCombinations(digit, index, output, mapping, ans);
+    letterCombinations(digits, index, output, mapping, ans);
 
     cout << "[ ";
     for (string str : ans)
