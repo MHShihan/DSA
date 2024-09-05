@@ -96,7 +96,7 @@ public:
         }
 
         solve(mat, n, srcx, srcy, visited, ans, path);
-        sort(ans.begin(), ans.end());
+        // sort(ans.begin(), ans.end());
         return ans;
     }
 };
