@@ -23,6 +23,7 @@ int main()
             cout << arr2[i][j] << " ";
         }
         cout << endl;
+        cout << endl;
     }
 
     return 0;
