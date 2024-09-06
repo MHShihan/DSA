@@ -10,6 +10,12 @@ private:
 public:
     int health = 100;
 
+    // Creating constructor
+    Hero()
+    {
+        cout << "Constructor is called" << endl;
+    }
+
     // Getter method
     char getLevel()
     {
@@ -34,9 +40,12 @@ int main()
 
     // DYNAMIC ALLOCATION
     Hero *b = new Hero;
-    a.setLevel('A');
-    cout << a.getLevel() << endl;
-    cout << a.health << endl;
+    (*b).setLevel('A');
+    cout << (*b).getLevel() << endl;
+    cout << (*b).health << endl;
+
+    cout << b->getLevel() << endl;
+    cout << b->health << endl;
 
     return 0;
 }
