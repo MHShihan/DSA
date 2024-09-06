@@ -1,13 +1,6 @@
 #include <iostream>
 using namespace std;
 
-struct Person
-{
-    string name = "Shihan";
-    int age = 23;
-    string sex = "Male";
-};
-
 class Hero
 {
     // Properties
@@ -31,15 +24,19 @@ public:
 
 int main()
 {
-    // Creating a instance of the Hero class
-    // STATIC ALLOCATION
-    Hero obj;
-    obj.setLevel('A');
-    cout << obj.getLevel() << endl;
-    cout << obj.health << endl;
 
-    Person p;
-    cout << p.name << " " << p.age << " " << p.sex << endl;
+    // STATIC ALLOCATION
+    // Creating a instance of the Hero class
+    Hero a;
+    a.setLevel('A');
+    cout << a.getLevel() << endl;
+    cout << a.health << endl;
+
+    // DYNAMIC ALLOCATION
+    Hero *b = new Hero;
+    a.setLevel('A');
+    cout << a.getLevel() << endl;
+    cout << a.health << endl;
 
     return 0;
 }
