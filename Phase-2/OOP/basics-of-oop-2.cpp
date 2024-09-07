@@ -66,9 +66,17 @@ int main()
     Person p("Shihan", 23, 'M');
     p.setAge(25);
 
+    Person q(p);
+
     cout << p.name << endl;
     cout << p.getAge() << endl;
     cout << p.sex << endl;
+
+    cout << "---------------" << endl;
+
+    cout << q.name << endl;
+    cout << q.getAge() << endl;
+    cout << q.sex << endl;
 
     return 0;
 }
