@@ -30,20 +30,32 @@ Node *convertArr2LL(vector<int> &arr)
     for (int i = 1; i < arr.size(); i++)
     {
         Node *temp = new Node(arr[i]);
-        mover->next = temp->next;
+        mover->next = temp;
         mover = temp;
     }
 
     return head;
 }
 
+void printLL(Node *head)
+{
+    Node *temp = head;
+    while (temp)
+    {
+        cout << temp->data << " ";
+        temp = temp->next;
+    }
+    cout << endl;
+}
+
 int main()
 {
-    vector<int> arr = {112, 5, 8, 9};
+    vector<int> arr = {2, 5, 8, 9};
 
     Node *head = convertArr2LL(arr);
 
     cout << head->data << endl;
+    printLL(head);
 
     return 0;
 }
