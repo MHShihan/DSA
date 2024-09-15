@@ -12,16 +12,17 @@ public:
     Node(int data)
     {
         this->data = data;
-        this->next = nullptr;
+        this->next = NULL;
     }
 
-    Node(int data1, Node *next1)
+    Node(int data, Node *next)
     {
-        data = data1;
-        next = next1;
+        this->data = data;
+        this->next = next;
     }
 };
 
+// Covert an array into linked list
 Node *convertArr2LL(vector<int> &arr)
 {
     Node *head = new Node(arr[0]);
@@ -37,6 +38,22 @@ Node *convertArr2LL(vector<int> &arr)
     return head;
 }
 
+// Count Node of LL
+
+int countNode(Node *head)
+{
+    int cnt = 0;
+    Node *temp = head;
+    while (temp)
+    {
+        cnt++;
+        temp = temp->next;
+    }
+
+    return cnt;
+}
+
+// Traverse into a linked list
 void printLL(Node *head)
 {
     Node *temp = head;
@@ -56,6 +73,8 @@ int main()
 
     cout << head->data << endl;
     printLL(head);
+
+    cout << "Total Node: " << countNode(head) << endl;
 
     return 0;
 }
