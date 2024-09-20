@@ -55,12 +55,28 @@ Node *removeHead(Node *head)
     return head;
 }
 
+Node *removeTail(Node *head)
+{
+    Node *temp = head;
+    while (temp->next->next != NULL)
+    {
+        temp = temp->next;
+    }
+    delete temp->next;
+    temp->next = NULL;
+
+    return head;
+}
+
 int main()
 {
     vector<int> arr = {2, 4, 6, 8};
     Node *head = convertArray2LL(arr);
-    head = removeHead(head);
-    cout << head->data << endl;
+
+    // head = removeHead(head);
+    // cout << head->data << endl;
+
+    head = removeTail(head);
     printLL(head);
     return 0;
 }
