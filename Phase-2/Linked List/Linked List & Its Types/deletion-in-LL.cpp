@@ -68,6 +68,37 @@ Node *removeTail(Node *head)
     return head;
 }
 
+Node *removeK(Node *head, int k)
+{
+    if (head == NULL)
+        return head;
+
+    if (k == 1)
+    {
+        Node *temp = head;
+        head = temp->next;
+        free(temp);
+        return head;
+    }
+
+    int cnt = 0;
+    Node *temp = head;
+    Node *prev = NULL;
+    while (temp)
+    {
+        cnt++;
+        if (cnt == k)
+        {
+            prev->next = prev->next->next;
+            free(temp);
+            break;
+        }
+        prev = temp;
+        temp = temp->next;
+    }
+    return head;
+}
+
 int main()
 {
     vector<int> arr = {2, 4, 6, 8};
@@ -76,7 +107,8 @@ int main()
     // head = removeHead(head);
     // cout << head->data << endl;
 
-    head = removeTail(head);
+    // head = removeTail(head);
+    head = removeK(head, 10);
     printLL(head);
     return 0;
 }
