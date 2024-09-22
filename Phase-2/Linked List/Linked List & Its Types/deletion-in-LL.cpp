@@ -12,7 +12,7 @@ public:
     Node(int data)
     {
         this->data = data;
-        this->next = NULL;
+        this->next = nullptr;
     }
 
     Node(int data, Node *next)
@@ -58,19 +58,19 @@ Node *removeHead(Node *head)
 Node *removeTail(Node *head)
 {
     Node *temp = head;
-    while (temp->next->next != NULL)
+    while (temp->next->next != nullptr)
     {
         temp = temp->next;
     }
     delete temp->next;
-    temp->next = NULL;
+    temp->next = nullptr;
 
     return head;
 }
 
 Node *removeK(Node *head, int k)
 {
-    if (head == NULL)
+    if (head == nullptr)
         return head;
 
     if (k == 1)
@@ -83,7 +83,7 @@ Node *removeK(Node *head, int k)
 
     int cnt = 0;
     Node *temp = head;
-    Node *prev = NULL;
+    Node *prev = nullptr;
     while (temp)
     {
         cnt++;
@@ -101,7 +101,7 @@ Node *removeK(Node *head, int k)
 
 Node *removeElement(Node *head, int element)
 {
-    if (head == NULL)
+    if (head == nullptr)
         return head;
 
     if (head->data == element)
@@ -113,7 +113,7 @@ Node *removeElement(Node *head, int element)
     }
 
     Node *temp = head;
-    Node *prev = NULL;
+    Node *prev = nullptr;
     while (temp)
     {
         if (temp->data == element)
