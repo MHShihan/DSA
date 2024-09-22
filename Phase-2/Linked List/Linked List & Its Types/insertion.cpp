@@ -64,13 +64,50 @@ Node *insertTail(Node *head, int value)
     return head;
 }
 
+Node *insertAtPosition(Node *head, int el, int k)
+{
+    if (head == NULL)
+    {
+        if (k == 1)
+        {
+            return new Node(el);
+        }
+        else
+        {
+            cout << "INVALID POSITION" << endl;
+        }
+    }
+
+    if (k == 1)
+    {
+        return new Node(el, head);
+    }
+
+    int cnt = 0;
+    Node *temp = head;
+    while (temp)
+    {
+        cnt++;
+        if (cnt == k - 1)
+        {
+            Node *newNode = new Node(el, temp->next);
+            temp->next = newNode;
+            break;
+        }
+        temp = temp->next;
+    }
+    return head;
+}
+
 int main()
 {
     vector<int> arr = {2, 4, 6, 8};
     Node *head = convertArray2LL(arr);
 
-    head = insertHead(head, 100);
-    insertTail(head, 200);
+    // head = insertHead(head, 100);
+    // insertTail(head, 200);
+
+    head = insertAtPosition(head, 10, 5);
 
     printLL(head);
 
