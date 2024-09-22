@@ -99,6 +99,39 @@ Node *insertAtPosition(Node *head, int el, int k)
     return head;
 }
 
+Node *insertBeforeValue(Node *head, int el, int val)
+{
+    if (head == NULL)
+    {
+        if (head->data == val)
+        {
+            return new Node(el);
+        }
+        else
+        {
+            cout << "INVALID" << endl;
+        }
+    }
+
+    if (head->data == val)
+    {
+        return new Node(el, head);
+    }
+
+    Node *temp = head;
+    while (temp->next != NULL)
+    {
+        if (temp->next->data == val)
+        {
+            Node *newNode = new Node(el, temp->next);
+            temp->next = newNode;
+            break;
+        }
+        temp = temp->next;
+    }
+    return head;
+}
+
 int main()
 {
     vector<int> arr = {2, 4, 6, 8};
@@ -107,7 +140,8 @@ int main()
     // head = insertHead(head, 100);
     // insertTail(head, 200);
 
-    head = insertAtPosition(head, 10, 5);
+    // head = insertAtPosition(head, 10, 5);
+    head = insertBeforeValue(head, 10, 33);
 
     printLL(head);
 
