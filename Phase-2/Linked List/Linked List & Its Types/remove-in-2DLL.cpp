@@ -47,6 +47,23 @@ void print2DLL(Node *head)
         cout << temp->data << " ";
         temp = temp->next;
     }
+    cout << endl;
+}
+
+void print2DLLInRevere(Node *head)
+{
+    Node *tail = head;
+    while (tail->next != nullptr)
+    {
+        tail = tail->next;
+    }
+
+    while (tail != nullptr)
+    {
+        cout << tail->data << " ";
+        tail = tail->back;
+    }
+    cout << endl;
 }
 
 Node *deleteHead(Node *head)
@@ -87,6 +104,30 @@ Node *deleteTail(Node *head)
     return head;
 }
 
+Node *deleteKthElement(Node *head, int k)
+{
+    if (head == nullptr || head->next == nullptr)
+    {
+        if (k == 1)
+        {
+            return nullptr;
+        }
+    }
+
+    int cnt = 0;
+    Node *temp = head;
+    while (temp)
+    {
+        cnt++;
+        if (cnt == k)
+            break;
+
+        temp = temp->next;
+    }
+
+    return head;
+}
+
 int main()
 {
     vector<int> arr = {2, 4, 6, 8};
@@ -94,8 +135,11 @@ int main()
 
     // head = deleteHead(head);
 
-    head = deleteTail(head);
+    // head = deleteTail(head);
+
+    // head = deleteKthElement(head, 2);
 
     print2DLL(head);
+    print2DLLInRevere(head);
     return 0;
 }
