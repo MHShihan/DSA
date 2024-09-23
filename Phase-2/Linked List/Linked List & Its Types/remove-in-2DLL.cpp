@@ -49,10 +49,28 @@ void print2DLL(Node *head)
     }
 }
 
+Node *deleteHead(Node *head)
+{
+
+    if (head == nullptr || head->next == nullptr)
+    {
+        return NULL;
+    }
+
+    Node *prev = head;
+    head = head->next;
+    head->back = nullptr;
+    prev->next = nullptr;
+    delete prev;
+
+    return head;
+}
+
 int main()
 {
     vector<int> arr = {2, 4, 6, 8};
     Node *head = convertArrayTo2DLL(arr);
+    head = deleteHead(head);
     print2DLL(head);
     return 0;
 }
