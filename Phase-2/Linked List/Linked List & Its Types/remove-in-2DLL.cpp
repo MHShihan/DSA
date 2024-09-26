@@ -106,12 +106,9 @@ Node *deleteTail(Node *head)
 
 Node *deleteKthElement(Node *head, int k)
 {
-    if (head == nullptr || head->next == nullptr)
+    if (head == NULL)
     {
-        if (k == 1)
-        {
-            return nullptr;
-        }
+        return NULL;
     }
 
     int cnt = 0;
@@ -124,6 +121,30 @@ Node *deleteKthElement(Node *head, int k)
 
         temp = temp->next;
     }
+    Node *prev = temp->back;
+    Node *front = temp->next;
+
+    if (prev == nullptr && front == nullptr)
+    {
+        delete head;
+        return NULL;
+    }
+    else if (prev == nullptr)
+    {
+        head = deleteHead(head);
+        return head;
+    }
+    else if (front == nullptr)
+    {
+        deleteTail(head);
+        return head;
+    }
+
+    prev->next = front;
+    front->back = prev;
+    temp->back = nullptr;
+    temp->next = nullptr;
+    delete temp;
 
     return head;
 }
@@ -137,7 +158,7 @@ int main()
 
     // head = deleteTail(head);
 
-    // head = deleteKthElement(head, 2);
+    head = deleteKthElement(head, 3);
 
     print2DLL(head);
     print2DLLInRevere(head);
