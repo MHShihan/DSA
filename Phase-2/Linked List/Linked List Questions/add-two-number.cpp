@@ -1,54 +1,68 @@
 #include <iostream>
-#include <vector>
-#include <stack>
 using namespace std;
 
 class Node
 {
 public:
     int data;
-    Node *next, *prev;
+    Node *next;
     Node()
     {
         this->data = 0;
-        next = NULL;
-        prev = NULL;
+        this->next = NULL;
     }
     Node(int data)
     {
         this->data = data;
         this->next = NULL;
-        this->prev = NULL;
     }
-    Node(int data, Node *next, Node *prev)
+    Node(int data, Node *next)
     {
         this->data = data;
         this->next = next;
-        this->prev = prev;
     }
 };
 
-Node *convertArrayDLL(vector<int> &arr)
+Node *addTwoNumbers(Node *num1, Node *num2)
 {
-    Node *head = new Node(arr[0]);
-    Node *prev = head;
+    Node *dummyNode = new Node(-1);
+    Node *curr = dummyNode;
+    Node *temp1 = num1;
+    Node *temp2 = num2;
 
-    for (int i = 1; i < arr.size(); i++)
+    int carry = 0;
+
+    while (temp1 != NULL || temp2 != NULL)
     {
-        Node *temp = new Node(arr[i], nullptr, prev);
-        prev->next = temp;
-        prev = temp;
+        // int sum = 0
+        // sum += carry;
+        int sum = carry;
+        if (temp1)
+            sum += temp1->data;
+        if (temp2)
+            sum += temp2->data;
+
+        Node *newNode = new Node(sum % 10);
+        carry = sum / 10;
+        curr->next = newNode;
+        curr = curr->next;
+
+        if (temp1)
+            temp1 = temp1->next;
+        if (temp2)
+            temp2 = temp2->next;
     }
-    return head;
+    if (carry)
+    {
+        Node *newNode = new Node(carry);
+        curr->next = newNode;
+    }
+
+    return dummyNode->next;
 }
 
-void printDLL(Node *head, vector<int> &arr)
+int main()
 {
-    Node *temp = head;
-    while (temp != NULL)
-    {
-        cout << temp->data << " ";
-        temp = temp->next;
-    }
-    cout << endl;
+
+    return 0;
 }
