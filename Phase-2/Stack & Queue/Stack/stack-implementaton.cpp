@@ -32,7 +32,11 @@ public:
     void pop()
     {
         if (top >= 0)
+        {
+            arr[top] = 0;
+            size--;
             top--;
+        }
         else
             cout << "Stack is empty." << endl;
     }
@@ -70,7 +74,7 @@ int main()
     st.pop();
     st.pop();
     st.pop();
-    st.pop();
+    // st.pop();
     cout << "Top -> " << st.peak() << endl;
 
     if (st.isEmpty())
