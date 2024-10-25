@@ -12,7 +12,7 @@ class Queue
 public:
     Queue()
     {
-        size = 10001;
+        size = 4;
         qFront = 0;
         rear = 0;
         arr = new int[size];
@@ -58,3 +58,25 @@ public:
             return arr[qFront];
     }
 };
+
+int main()
+{
+    Queue q;
+    q.enqueue(10);
+    q.enqueue(20);
+    q.enqueue(30);
+
+    cout << "Front element: " << q.front() << endl;
+    q.dequeue();
+    cout << "Front element: " << q.front() << endl;
+
+    q.enqueue(40);
+    q.dequeue();
+    q.dequeue();
+    q.dequeue();
+    cout << "Front element: " << q.front() << endl;
+
+    q.enqueue(50);
+
+    return 0;
+}
