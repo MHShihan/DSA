@@ -65,6 +65,17 @@ void printLL(Node *head)
     cout << endl;
 }
 
+Node *kthNode(Node *temp, int k)
+{
+    k -= 1;
+    while (temp != NULL && k > 0)
+    {
+        k--;
+        temp = temp->next;
+    }
+    return temp;
+}
+
 int main()
 {
     vector<int> arr = {2, 5, 8, 9};
@@ -75,6 +86,12 @@ int main()
     printLL(head);
 
     cout << "Total Node: " << countNode(head) << endl;
+
+    Node *temp = head;
+    cout << "Temp --> " << temp->data << endl;
+    Node *kth = kthNode(temp, 3);
+    cout << "after kth --> " << temp->data << endl;
+    cout << " kth --> " << kth->data;
 
     return 0;
 }
