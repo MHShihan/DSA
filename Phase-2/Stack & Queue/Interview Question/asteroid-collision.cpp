@@ -1,3 +1,7 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
 vector<int> asteroidCollision(vector<int> &asteroids)
 {
     stack<int> st;
@@ -33,4 +37,9 @@ vector<int> asteroidCollision(vector<int> &asteroids)
         res[j--] = st.top();
         st.pop();
     }
+}
+
+int main()
+{
+    return 0;
 }
